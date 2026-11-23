@@ -1,5 +1,5 @@
 """API schemas package"""
-from app.schemas.user import UserResponse, UserRegisterRequest, UserLoginRequest
+from app.schemas.user import UserResponse, UserRegister, UserLogin, TokenResponse
 
 # Hotel schemas
 from app.schemas.hotel import (
@@ -34,8 +34,9 @@ from app.schemas.attraction import (
 __all__ = [
     # User
     "UserResponse",
-    "UserRegisterRequest",
-    "UserLoginRequest",
+    "UserRegister",
+    "UserLogin",
+    "TokenResponse",
     # Hotel
     "HotelDetailResponse",
     "HotelSearchResponse",
