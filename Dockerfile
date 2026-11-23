@@ -13,6 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the backend code
 COPY backend/ .
 
+# Cache buster - forces rebuild when this line changes (for Railway)
+ARG BUILD_DATE=unknown
+RUN echo "Build date: ${BUILD_DATE}"
+
 # Expose port
 EXPOSE 8000
 
