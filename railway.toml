@@ -1,0 +1,13 @@
+# Railway configuration for YatraDiscover AI backend
+# Tells Railway how to build and run the Python backend
+
+[build]
+builder = "nixpacks"
+
+[environment]
+PYTHONPATH = "backend"
+
+[start]
+# Run from backend directory where app/main.py is located
+cmd = "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+
