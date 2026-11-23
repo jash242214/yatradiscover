@@ -32,12 +32,12 @@ class Settings(BaseSettings):
     ]
 
     # Database
-    DATABASE_URL: str = "postgresql://user:password@localhost:5432/yatradiscover"
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5432/yatradiscover")
     DATABASE_POOL_SIZE: int = 10
     DATABASE_MAX_OVERFLOW: int = 20
 
     # JWT
-    JWT_SECRET_KEY: str = "your-super-secret-key-change-in-production"
+    JWT_SECRET_KEY: str = os.getenv("SECRET_KEY", "your-super-secret-key-change-in-production")
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRATION_HOURS: int = 24
     JWT_REFRESH_EXPIRATION_DAYS: int = 7
@@ -53,7 +53,7 @@ class Settings(BaseSettings):
     SENDGRID_API_KEY: Optional[str] = None
 
     # Redis
-    REDIS_URL: Optional[str] = "redis://localhost:6379"
+    REDIS_URL: Optional[str] = os.getenv("REDIS_URL", "redis://localhost:6379")
     REDIS_DB: int = 0
 
     class Config:
