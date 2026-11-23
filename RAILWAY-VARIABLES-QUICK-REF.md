@@ -17,8 +17,14 @@ Value: postgresql://postgres:Itsmygame@143@db.zseviucrtfdwuvmiokzv.supabase.co:5
 ### Variable 2
 ```
 Name:  SECRET_KEY
-Value: your-super-secret-jwt-key-change-in-production
+Value: YatraDiscover_JWT_Secret_Key_2024@Production
 ```
+
+**What is SECRET_KEY?**
+- Password used to sign user login tokens (JWT)
+- Used for authentication and security
+- Must be unique and random
+- Keep it secret, don't share it
 
 ### Variable 3
 ```
